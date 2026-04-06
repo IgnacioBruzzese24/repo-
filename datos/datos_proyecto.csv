@@ -1,7 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 27 15:14:58 2026
-
-@author: nacho
-"""
-
+1,0.1,120.5,300.2,False,competencia
+1,0.2,122.0,305.1,False,competencia
+1,0.3,125.4,310.0,True,competencia
+1,0.4,130.2,315.8,False,competencia
+1,0.5,135.0,320.0,True,competencia
+2,0.1,200.0,100.0,False,cooperacion
+2,0.2,202.5,105.0,False,cooperacion
+2,0.3,205.0,110.0,True,cooperacion
+2,0.4,210.0,115.0,False,cooperacion
