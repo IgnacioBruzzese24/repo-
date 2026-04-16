@@ -73,6 +73,16 @@ El proyecto permite practicar:
 * validación de datos y manejo de errores
 
 ---
+##Errores y Validaciones
+
+El sistema incluye validaciones para garantizar la correcta ejecución:
+
+* Formato de línea: se verifica que cada registro tenga 6 valores
+* Tipos de datos: conversión de ID (int) y variables numéricas (float)
+* Rango: el tiempo debe ser mayor o igual a 0
+* Líneas inválidas: se ignoran mostrando un mensaje de error
+* Participante inexistente: se informa al usuario
+* Entrada del usuario: se valida que el ID sea numérico
 
 ## Nota
 
