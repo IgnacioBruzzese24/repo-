@@ -90,3 +90,55 @@ Los datos utilizados son simulados y tienen fines exclusivamente educativos.
 
 ---
 
+## molde del sistema usando objetos
+
+- El sistema incluye estas clases:
+
+* Clase Registro
+--> representa un instante de medicion (una fila del archivo CSV)
+Atributos 
+id_participante: int
+tiempo: float
+x: float
+y: float
+hit: bool
+condicion: str
+
+Métodos
+es_hit() --> devuelve si ocurrió un hit
+es_valido() --> verifica los datos
+
+* Clase Participante
+--> analiza los datos de un participante
+Atributos
+id: int
+registros: lista de objetos del tipo Registro
+
+Métodos
+agregar_registro(registro)
+calcular_hits_totales()
+tiempo_primer_hit()
+tiene_datos() --> verifica si el participante ya tiene datos cargados
+
+* Clase Archivo
+--> lee el archivo CSV
+Atributos
+ruta: str
+
+Métodos
+abrir_archivo() --> verifica si el archivo existe y se puede abrir
+leer_datos() 
+
+* Clase Sistema
+--> valida los datos del archivo y los almacena
+Atributos
+participantes: dict {id: participante}
+
+Metodos
+validar_linea(linea)
+procesar_datos() --> crea registros y los asigna a cada participante
+obtener_participante(id)
+
+
+
+
