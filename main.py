@@ -13,8 +13,10 @@ from src.metricas import (
 )
 
 def main():
-    ruta = "datos/datos_proyecto.csv"
 
+    ruta = "datos/MotionLab_mock_data.csv"
+
+    
     try:
         datos = cargar_datos(ruta)
     except FileNotFoundError:
@@ -26,33 +28,39 @@ def main():
 
     print("Datos cargados correctamente\n")
 
+    
     try:
         id_buscado = int(input("Ingrese ID del participante: "))
     except ValueError:
         print("Error: el ID debe ser un número entero.")
         return
 
+    
     participante = filtrar_por_participante(datos, id_buscado)
 
+    
     if participante == None:
         print("Error: participante no encontrado.")
         return
 
+    
     try:
         hits_totales = calcular_hits_totales(participante)
-        primer_hit = calcular_tiempo_primer_hit(participante)
+        tiempo_primer_hit = calcular_tiempo_primer_hit(participante)
     except Exception as e:
         print(f"Error al calcular métricas: {e}")
         return
 
+    
     print("\n--- RESULTADOS ---")
     print(f"Participante: {id_buscado}")
     print(f"Condición: {participante['condicion'][0]}")
     print(f"Hits totales: {hits_totales}")
 
-    if primer_hit != None:
-        print(f"Tiempo del primer hit: {primer_hit}")
+    if tiempo_primer_hit != None:
+        print(f"Tiempo del primer hit: {tiempo_primer_hit}")
     else:
         print("No hubo hits")
+
 
 main()
